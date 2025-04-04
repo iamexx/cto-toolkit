@@ -2,7 +2,7 @@
 
 There are two methods to deploy this app to Railway:
 
-## Method 1: Direct Deployment from GitHub
+## Method 1: Direct Deployment from GitHub (Recommended)
 
 1. **Fork this repository to your GitHub account**
 
@@ -58,15 +58,33 @@ If you encounter any issues during deployment:
    - In Railway dashboard, go to "Deployments" and check the latest deployment logs
 
 2. **Common issues**:
-   - Missing dependencies: Make sure all dependencies are properly listed in package.json
-   - Environment variables: Ensure all required environment variables are set
-   - Port configuration: Railway automatically assigns a PORT environment variable, make sure your app uses it
+   - **Nixpacks errors**: If you see errors related to Nixpacks or npm, try changing the settings in the Railway dashboard:
+     1. Go to your project settings
+     2. Find "Settings" tab
+     3. Under "Environment", make sure Node.js 18 or higher is selected
+     4. Under "Build Command", enter: `npm install --legacy-peer-deps && npm run build`
+     5. Under "Start Command", enter: `npm start`
+   
+   - **Missing dependencies**: Make sure all dependencies are properly listed in package.json
+   - **Environment variables**: Ensure all required environment variables are set
+   - **Port configuration**: Railway automatically assigns a PORT environment variable, make sure your app uses it
 
 3. **Testing locally before deployment**:
    ```bash
    npm run build
    npm start
    ```
+
+## Build Configuration Files
+
+The repository contains multiple deployment configuration files to ensure compatibility with Railway:
+
+- **railway.json**: Main Railway configuration
+- **nixpacks.toml**: Nixpacks configuration for the build environment
+- **Procfile**: Simple process declaration (alternative method)
+- **.buildpacks**: Buildpacks configuration (alternative method)
+
+Railway should automatically detect and use the appropriate configuration.
 
 ## Additional Resources
 

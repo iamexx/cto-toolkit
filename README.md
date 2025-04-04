@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛠️ Solana CTO Takeover Toolkit
 
-## Getting Started
+A web interface that helps token communities take over and revive abandoned meme token projects on Solana.
 
-First, run the development server:
+## Features
+
+- 🔍 **Token Scanner**: Analyze SPL token details and readiness for takeover
+- 💰 **Buyout Strategy**: Calculate costs to become a top holder
+- 🌐 **Social Takeover Kit**: Deploy community rooms and message templates
+- 👥 **Community Treasury**: Setup multisig wallet and governance
+- 📈 **Growth & Quests**: Tools to grow community and engagement
+- 🚀 **Landing Page Generator**: Quickly create a token landing page
+- 🪙 **DEX Booster**: Deploy liquidity and boost visibility
+
+## Tech Stack
+
+- **Frontend**: Next.js, React, TailwindCSS
+- **UI Components**: shadcn/ui components
+- **Charts**: Recharts
+- **Icons**: Lucide React
+- **Deployment**: Railway
+
+## Local Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment to Railway
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Create a Railway account at [railway.app](https://railway.app)
+2. Install Railway CLI:
+   ```bash
+   npm i -g @railway/cli
+   ```
+3. Login to Railway:
+   ```bash
+   railway login
+   ```
+4. Initialize project:
+   ```bash
+   railway init
+   ```
+5. Deploy to Railway:
+   ```bash
+   railway up
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Customization
 
-## Learn More
+1. Modify the tokens and messages in `components/CTOToolkitApp.tsx`
+2. Adjust styles in `app/globals.css`
+3. Update project settings in `railway.json`
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

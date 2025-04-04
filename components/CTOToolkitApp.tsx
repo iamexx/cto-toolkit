@@ -6,8 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Sparkles, Wallet, Globe, Users, TrendingUp, LucideIcon } from "lucide-react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { Sparkles, Wallet, Globe, Users, TrendingUp, LucideIcon, CheckCircle, AlertCircle, PieChart, BarChart4, Activity, TrendingDown } from "lucide-react";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, BarChart, Bar, Cell, Legend, Pie } from "recharts";
 
 interface SectionProps {
   icon: LucideIcon;
@@ -45,6 +45,25 @@ export default function CTOToolkitApp() {
     { day: "Day 5", ownership: 35 },
   ];
 
+  // Activity data for token chart
+  const tokenActivityData = [
+    { time: '00:00', volume: 1.2, transactions: 8 },
+    { time: '04:00', volume: 0.8, transactions: 5 },
+    { time: '08:00', volume: 2.5, transactions: 17 },
+    { time: '12:00', volume: 3.8, transactions: 25 },
+    { time: '16:00', volume: 5.2, transactions: 34 },
+    { time: '20:00', volume: 4.0, transactions: 29 },
+    { time: '23:59', volume: 2.8, transactions: 19 },
+  ];
+
+  // Holder distribution data
+  const holderDistributionData = [
+    { name: 'Top Whale', value: 12, color: '#9333ea' },
+    { name: 'Other Whales', value: 31, color: '#a855f7' },
+    { name: 'Medium Holders', value: 27, color: '#c084fc' },
+    { name: 'Small Holders', value: 30, color: '#d8b4fe' },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white px-4 py-10">
       <div className="relative max-w-4xl mx-auto space-y-10 pt-20">
@@ -70,25 +89,227 @@ export default function CTOToolkitApp() {
             <DialogTrigger asChild>
               <Button className="bg-purple-600 hover:bg-purple-700 w-full">Analyze Token</Button>
             </DialogTrigger>
-            <DialogContent className="bg-[#1f1b3a] text-white max-w-2xl w-full">
-              <DialogHeader>
-                <DialogTitle className="text-white text-2xl">📊 Token Analysis Report</DialogTitle>
-              </DialogHeader>
-              <div className="space-y-4 text-sm text-gray-300">
-                <p>🔍 Token Overview:</p>
-                <ul className="list-disc list-inside">
-                  <li>Mint Authority: Burned ✅</li>
-                  <li>Freeze Authority: Removed ✅</li>
-                  <li>LP Status: 90% locked</li>
-                  <li>Top 10 Holders: Control 43% of supply</li>
-                  <li>Holder Churn: Low (Strong Diamond Hands 🧱)</li>
-                </ul>
-                <p>📈 Activity Chart (24h Volume vs. Transactions)</p>
-                <div className="h-48 bg-white/10 rounded-md p-2 text-center text-gray-400">
-                  [Graph Placeholder]
+            <DialogContent className="bg-[#1f1b3a] text-white max-w-3xl w-full p-0 overflow-hidden">
+              <div className="flex flex-col h-full">
+                {/* Header with gradient background */}
+                <div className="bg-gradient-to-r from-purple-900 to-indigo-900 p-6">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-white/10 p-3 rounded-full">
+                      <Activity className="h-8 w-8 text-purple-300" />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl font-bold text-white">Token Analysis Report</h2>
+                      <p className="text-purple-300 text-sm">GRBGBTM1JRV8LH3U5MQ1U9A2MQNR9JVRTXKCU7YX</p>
+                    </div>
+                  </div>
                 </div>
-                <p>🧠 AI Takeover Readiness Score: 84/100</p>
-                <p className="italic">"This token shows strong decentralization and hype potential. Community takeover is viable."</p>
+                
+                {/* Content */}
+                <div className="p-6 space-y-6 overflow-y-auto max-h-[70vh]">
+                  {/* Status Summary */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <Card className="bg-[#272145] border-0 shadow-md">
+                      <CardContent className="p-4 flex flex-col items-center justify-center text-center">
+                        <div className="mb-1 text-green-400">
+                          <CheckCircle className="h-6 w-6 mb-1 mx-auto" />
+                        </div>
+                        <h3 className="font-medium text-white">Mint Authority</h3>
+                        <p className="text-sm text-gray-300">Burned</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="bg-[#272145] border-0 shadow-md">
+                      <CardContent className="p-4 flex flex-col items-center justify-center text-center">
+                        <div className="mb-1 text-green-400">
+                          <CheckCircle className="h-6 w-6 mb-1 mx-auto" />
+                        </div>
+                        <h3 className="font-medium text-white">Freeze Authority</h3>
+                        <p className="text-sm text-gray-300">Removed</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="bg-[#272145] border-0 shadow-md">
+                      <CardContent className="p-4 flex flex-col items-center justify-center text-center">
+                        <div className="mb-1 text-yellow-400">
+                          <AlertCircle className="h-6 w-6 mb-1 mx-auto" />
+                        </div>
+                        <h3 className="font-medium text-white">LP Status</h3>
+                        <p className="text-sm text-gray-300">90% Locked</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  
+                  {/* Ownership Section */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-4">
+                      <PieChart className="h-5 w-5 text-purple-400" />
+                      <h3 className="text-lg font-medium text-white">Token Distribution</h3>
+                    </div>
+                    <div className="bg-[#272145] p-4 rounded-lg">
+                      <div className="flex flex-col md:flex-row gap-4 items-center">
+                        <div className="w-full md:w-1/2">
+                          <ResponsiveContainer width="100%" height={200}>
+                            <PieChart>
+                              <Tooltip 
+                                contentStyle={{ 
+                                  backgroundColor: "#1f1b3a", 
+                                  border: "none", 
+                                  borderRadius: "4px",
+                                  boxShadow: "0 4px 6px rgba(0,0,0,0.1)"
+                                }} 
+                              />
+                              <Pie 
+                                data={holderDistributionData} 
+                                cx="50%" 
+                                cy="50%" 
+                                innerRadius={60}
+                                outerRadius={80} 
+                                fill="#8884d8" 
+                                paddingAngle={2}
+                                dataKey="value"
+                              >
+                                {holderDistributionData.map((entry, index) => (
+                                  <Cell key={`cell-${index}`} fill={entry.color} />
+                                ))}
+                              </Pie>
+                              <Legend
+                                verticalAlign="bottom"
+                                height={36}
+                                iconType="circle"
+                              />
+                            </PieChart>
+                          </ResponsiveContainer>
+                        </div>
+                        <div className="w-full md:w-1/2 space-y-2">
+                          <div className="flex justify-between items-center">
+                            <span className="text-gray-300 text-sm">Top 10 Holders</span>
+                            <span className="text-white font-medium">43% of supply</span>
+                          </div>
+                          <div className="w-full bg-gray-700 rounded-full h-2">
+                            <div className="bg-purple-500 h-2 rounded-full" style={{ width: '43%' }}></div>
+                          </div>
+                          
+                          <div className="flex justify-between items-center mt-3">
+                            <span className="text-gray-300 text-sm">Holder Churn</span>
+                            <span className="text-green-400 font-medium">Low (Diamond Hands)</span>
+                          </div>
+                          <div className="w-full bg-gray-700 rounded-full h-2">
+                            <div className="bg-green-500 h-2 rounded-full" style={{ width: '15%' }}></div>
+                          </div>
+                          
+                          <div className="flex justify-between items-center mt-3">
+                            <span className="text-gray-300 text-sm">Team Tokens</span>
+                            <span className="text-white font-medium">0% (Community Owned)</span>
+                          </div>
+                          <div className="w-full bg-gray-700 rounded-full h-2">
+                            <div className="bg-blue-500 h-2 rounded-full" style={{ width: '0%' }}></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Activity Chart */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-4">
+                      <BarChart4 className="h-5 w-5 text-purple-400" />
+                      <h3 className="text-lg font-medium text-white">24h Activity</h3>
+                    </div>
+                    <div className="bg-[#272145] p-4 rounded-lg">
+                      <ResponsiveContainer width="100%" height={250}>
+                        <AreaChart data={tokenActivityData}
+                          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                          <defs>
+                            <linearGradient id="colorVolume" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+                              <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+                            </linearGradient>
+                            <linearGradient id="colorTx" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
+                              <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+                            </linearGradient>
+                          </defs>
+                          <XAxis dataKey="time" stroke="#aaa" />
+                          <YAxis yAxisId="left" stroke="#8884d8" />
+                          <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
+                          <CartesianGrid strokeDasharray="3 3" stroke="#444" />
+                          <Tooltip 
+                            contentStyle={{ 
+                              backgroundColor: "#1f1b3a", 
+                              border: "none", 
+                              borderRadius: "4px" 
+                            }} 
+                          />
+                          <Legend />
+                          <Area 
+                            yAxisId="left" 
+                            type="monotone" 
+                            dataKey="volume" 
+                            stroke="#8884d8" 
+                            fillOpacity={1} 
+                            fill="url(#colorVolume)" 
+                            name="Volume (SOL)"
+                          />
+                          <Area 
+                            yAxisId="right" 
+                            type="monotone" 
+                            dataKey="transactions" 
+                            stroke="#82ca9d" 
+                            fillOpacity={1} 
+                            fill="url(#colorTx)" 
+                            name="Transactions"
+                          />
+                        </AreaChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </div>
+                  
+                  {/* AI Takeover Score */}
+                  <div className="bg-gradient-to-r from-purple-900/50 to-indigo-900/50 rounded-lg p-5 border border-purple-800">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h3 className="text-lg font-semibold text-white mb-1">AI Takeover Readiness Score</h3>
+                        <p className="text-gray-300 text-sm max-w-lg">This token shows strong decentralization with minimal whale control. Community is active and social signals indicate growth potential. Token takeover is viable with moderate investment.</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="relative">
+                          <svg className="w-20 h-20" viewBox="0 0 36 36">
+                            <path
+                              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                              fill="none"
+                              stroke="#444"
+                              strokeWidth="2"
+                              strokeDasharray="100, 100"
+                            />
+                            <path
+                              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                              fill="none"
+                              stroke="#9333ea"
+                              strokeWidth="2"
+                              strokeDasharray="84, 100"
+                            />
+                          </svg>
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-2xl font-bold text-white">84</span>
+                          </div>
+                        </div>
+                        <span className="text-xs text-purple-300">out of 100</span>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      <span className="px-2 py-1 bg-purple-900/50 text-purple-200 text-xs rounded-full border border-purple-700">Strong Community</span>
+                      <span className="px-2 py-1 bg-purple-900/50 text-purple-200 text-xs rounded-full border border-purple-700">Low Manipulation Risk</span>
+                      <span className="px-2 py-1 bg-purple-900/50 text-purple-200 text-xs rounded-full border border-purple-700">Good Social Presence</span>
+                      <span className="px-2 py-1 bg-purple-900/50 text-purple-200 text-xs rounded-full border border-purple-700">Revival Potential</span>
+                    </div>
+                  </div>
+                  
+                  {/* Action Button */}
+                  <div className="flex justify-end">
+                    <Button className="bg-purple-600 hover:bg-purple-700 px-6">
+                      Export Full Report
+                    </Button>
+                  </div>
+                </div>
               </div>
             </DialogContent>
           </Dialog>

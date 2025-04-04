@@ -6,6 +6,7 @@
     "dev": "next dev --turbopack",
     "prebuild": "npm install --legacy-peer-deps",
     "build": "next build",
+    "postinstall": "npm run build",
     "start": "next start",
     "lint": "next lint"
   },

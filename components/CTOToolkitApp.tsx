@@ -114,19 +114,19 @@ export default function CTOToolkitApp() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white px-4 py-10">
+    <div className="min-h-screen bg-gradient-to-b from-[#0A0F25] via-[#14226F] to-[#0E1B52] text-white px-4 py-10">
       <div className="relative max-w-4xl mx-auto space-y-10 pt-20">
         {/* Wallet Connect and User Info - Improved */}
         <div className="absolute top-4 right-4 z-50">
-          <div className="flex items-center gap-3 bg-[#1f1b3a]/80 backdrop-blur-sm rounded-lg px-4 py-2 border border-purple-500/30 shadow-lg">
+          <div className="flex items-center gap-3 bg-[#1C1F3A]/80 backdrop-blur-sm rounded-lg px-4 py-2 border border-[#02E4B7]/30 shadow-lg">
             <div className="hidden sm:flex flex-col items-end mr-1">
-              <span className="text-xs text-purple-300">Logged in as</span>
+              <span className="text-xs text-[#02E4B7]">Logged in as</span>
               <span className="text-sm font-medium text-white">Adem The CTO King</span>
             </div>
-            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-blue-500 flex items-center justify-center text-white text-sm font-bold">
+            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-[#9945FF] to-[#14F195] flex items-center justify-center text-white text-sm font-bold">
               A
             </div>
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm px-3 py-1 h-auto font-medium">
+            <Button className="bg-[#9945FF] hover:bg-[#7C3ADB] text-white text-xs sm:text-sm px-3 py-1 h-auto font-medium">
               <span className="hidden sm:inline">🔐 Wallet</span>
               <span className="sm:hidden">🔐</span>
             </Button>
@@ -142,23 +142,23 @@ export default function CTOToolkitApp() {
           </p>
         </header>
 
-        <Section icon={Sparkles} title="Token Scanner" borderColor="border-purple-500">
-          <Input placeholder="Paste SPL token address..." className="bg-[#2d294a] text-white border border-purple-700" />
+        <Section icon={Sparkles} title="Token Scanner" borderColor="border-[#9945FF]">
+          <Input placeholder="Paste SPL token address..." className="bg-[#1C1F3A] text-white border border-[#9945FF]" />
           <Dialog>
             <DialogTrigger asChild>
-              <Button className="bg-purple-600 hover:bg-purple-700 w-full">Analyze Token</Button>
+              <Button className="bg-[#9945FF] hover:bg-[#7C3ADB] w-full">Analyze Token</Button>
             </DialogTrigger>
             <ConsistentDialogContent>
               <div className="flex flex-col h-full">
                 {/* Header with gradient background */}
-                <div className="bg-gradient-to-r from-purple-900 to-indigo-900 p-4 sm:p-6">
+                <div className="bg-gradient-to-r from-[#9945FF] to-[#14F195] p-4 sm:p-6">
                   <div className="flex items-center gap-2 sm:gap-4">
                     <div className="bg-white/10 p-2 sm:p-3 rounded-full">
-                      <Activity className="h-6 w-6 sm:h-8 sm:w-8 text-purple-300" />
+                      <Activity className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                     </div>
                     <div>
                       <h2 className="text-xl sm:text-2xl font-bold text-white">Token Analysis Report</h2>
-                      <p className="text-purple-300 text-xs sm:text-sm truncate max-w-[200px] sm:max-w-full">GRBGBTM1JRV8LH3U5MQ1U9A2MQNR9JVRTXKCU7YX</p>
+                      <p className="text-white/80 text-xs sm:text-sm truncate max-w-[200px] sm:max-w-full">GRBGBTM1JRV8LH3U5MQ1U9A2MQNR9JVRTXKCU7YX</p>
                     </div>
                   </div>
                 </div>
@@ -167,25 +167,25 @@ export default function CTOToolkitApp() {
                 <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 overflow-y-auto max-h-[70vh]">
                   {/* Status Summary */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-                    <Card className="bg-[#272145] border-0 shadow-md">
+                    <Card className="bg-[#1C1F3A] border-0 shadow-md">
                       <CardContent className="p-4 flex flex-col items-center justify-center text-center">
-                        <div className="mb-1 text-green-400">
+                        <div className="mb-1 text-[#14F195]">
                           <CheckCircle className="h-6 w-6 mb-1 mx-auto" />
                         </div>
                         <h3 className="font-medium text-white">Mint Authority</h3>
                         <p className="text-sm text-gray-300">Burned</p>
                       </CardContent>
                     </Card>
-                    <Card className="bg-[#272145] border-0 shadow-md">
+                    <Card className="bg-[#1C1F3A] border-0 shadow-md">
                       <CardContent className="p-4 flex flex-col items-center justify-center text-center">
-                        <div className="mb-1 text-green-400">
+                        <div className="mb-1 text-[#14F195]">
                           <CheckCircle className="h-6 w-6 mb-1 mx-auto" />
                         </div>
                         <h3 className="font-medium text-white">Freeze Authority</h3>
                         <p className="text-sm text-gray-300">Removed</p>
                       </CardContent>
                     </Card>
-                    <Card className="bg-[#272145] border-0 shadow-md">
+                    <Card className="bg-[#1C1F3A] border-0 shadow-md">
                       <CardContent className="p-4 flex flex-col items-center justify-center text-center">
                         <div className="mb-1 text-yellow-400">
                           <AlertCircle className="h-6 w-6 mb-1 mx-auto" />
@@ -199,10 +199,10 @@ export default function CTOToolkitApp() {
                   {/* Ownership Section */}
                   <div>
                     <div className="flex items-center gap-2 mb-4">
-                      <PieChartIcon className="h-5 w-5 text-purple-400" />
+                      <PieChartIcon className="h-5 w-5 text-[#9945FF]" />
                       <h3 className="text-lg font-medium text-white">Token Distribution</h3>
                     </div>
-                    <div className="bg-[#272145] p-4 rounded-lg">
+                    <div className="bg-[#1C1F3A] p-4 rounded-lg">
                       <div className="flex flex-col md:flex-row gap-4 items-center">
                         <div className="w-full md:w-1/2">
                           <ResponsiveContainer width="100%" height={200}>
@@ -243,15 +243,15 @@ export default function CTOToolkitApp() {
                             <span className="text-white font-medium">43% of supply</span>
                           </div>
                           <div className="w-full bg-gray-700 rounded-full h-2">
-                            <div className="bg-purple-500 h-2 rounded-full" style={{ width: '43%' }}></div>
+                            <div className="bg-[#9945FF] h-2 rounded-full" style={{ width: '43%' }}></div>
                           </div>
                           
                           <div className="flex justify-between items-center mt-3">
                             <span className="text-gray-300 text-sm">Holder Churn</span>
-                            <span className="text-green-400 font-medium">Low (Diamond Hands)</span>
+                            <span className="text-[#14F195] font-medium">Low (Diamond Hands)</span>
                           </div>
                           <div className="w-full bg-gray-700 rounded-full h-2">
-                            <div className="bg-green-500 h-2 rounded-full" style={{ width: '15%' }}></div>
+                            <div className="bg-[#14F195] h-2 rounded-full" style={{ width: '15%' }}></div>
                           </div>
                           
                           <div className="flex justify-between items-center mt-3">
@@ -259,7 +259,7 @@ export default function CTOToolkitApp() {
                             <span className="text-white font-medium">0% (Community Owned)</span>
                           </div>
                           <div className="w-full bg-gray-700 rounded-full h-2">
-                            <div className="bg-blue-500 h-2 rounded-full" style={{ width: '0%' }}></div>
+                            <div className="bg-[#00C2FF] h-2 rounded-full" style={{ width: '0%' }}></div>
                           </div>
                         </div>
                       </div>
@@ -322,7 +322,7 @@ export default function CTOToolkitApp() {
                   </div>
                   
                   {/* AI Takeover Score */}
-                  <div className="bg-gradient-to-r from-purple-900/50 to-indigo-900/50 rounded-lg p-5 border border-purple-800">
+                  <div className="bg-gradient-to-r from-[#1C1F3A] to-[#2D3282]/50 rounded-lg p-5 border border-[#9945FF]/50">
                     <div className="flex items-start justify-between">
                       <div>
                         <h3 className="text-lg font-semibold text-white mb-1">AI Takeover Readiness Score</h3>
@@ -341,7 +341,7 @@ export default function CTOToolkitApp() {
                             <path
                               d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                               fill="none"
-                              stroke="#9333ea"
+                              stroke="#9945FF"
                               strokeWidth="2"
                               strokeDasharray="84, 100"
                             />
@@ -350,21 +350,21 @@ export default function CTOToolkitApp() {
                             <span className="text-2xl font-bold text-white">84</span>
                           </div>
                         </div>
-                        <span className="text-xs text-purple-300">out of 100</span>
+                        <span className="text-xs text-[#02E4B7]">out of 100</span>
                       </div>
                     </div>
                     
                     <div className="mt-4 flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-purple-900/50 text-purple-200 text-xs rounded-full border border-purple-700">Strong Community</span>
-                      <span className="px-2 py-1 bg-purple-900/50 text-purple-200 text-xs rounded-full border border-purple-700">Low Manipulation Risk</span>
-                      <span className="px-2 py-1 bg-purple-900/50 text-purple-200 text-xs rounded-full border border-purple-700">Good Social Presence</span>
-                      <span className="px-2 py-1 bg-purple-900/50 text-purple-200 text-xs rounded-full border border-purple-700">Revival Potential</span>
+                      <span className="px-2 py-1 bg-[#1C1F3A] text-[#02E4B7] text-xs rounded-full border border-[#9945FF]/50">Strong Community</span>
+                      <span className="px-2 py-1 bg-[#1C1F3A] text-[#02E4B7] text-xs rounded-full border border-[#9945FF]/50">Low Manipulation Risk</span>
+                      <span className="px-2 py-1 bg-[#1C1F3A] text-[#02E4B7] text-xs rounded-full border border-[#9945FF]/50">Good Social Presence</span>
+                      <span className="px-2 py-1 bg-[#1C1F3A] text-[#02E4B7] text-xs rounded-full border border-[#9945FF]/50">Revival Potential</span>
                     </div>
                   </div>
                   
                   {/* Action Button */}
                   <div className="flex justify-end">
-                    <Button className="bg-purple-600 hover:bg-purple-700 px-6">
+                    <Button className="bg-[#9945FF] hover:bg-[#7C3ADB] px-6">
                       Export Full Report
                     </Button>
                   </div>
@@ -374,25 +374,25 @@ export default function CTOToolkitApp() {
           </Dialog>
         </Section>
 
-        <Section icon={Wallet} title="Buyout Strategy" borderColor="border-yellow-500">
+        <Section icon={Wallet} title="Buyout Strategy" borderColor="border-[#00C2FF]">
           <p className="text-gray-300 text-sm">
             Estimate how much $SOL it takes to become a top holder.
           </p>
           <Dialog>
             <DialogTrigger asChild>
-              <Button className="bg-yellow-500 hover:bg-yellow-600 text-black w-full">Calculate Buyout</Button>
+              <Button className="bg-[#00C2FF] hover:bg-[#00A3D3] text-black w-full">Calculate Buyout</Button>
             </DialogTrigger>
             <ConsistentDialogContent>
               <div className="flex flex-col h-full">
                 {/* Header with gradient background */}
-                <div className="bg-gradient-to-r from-yellow-700 to-amber-600 p-4 sm:p-6">
+                <div className="bg-gradient-to-r from-[#00C2FF] to-[#02E4B7] p-4 sm:p-6">
                   <div className="flex items-center gap-2 sm:gap-4">
                     <div className="bg-white/10 p-2 sm:p-3 rounded-full">
-                      <Wallet className="h-6 w-6 sm:h-8 sm:w-8 text-yellow-200" />
+                      <Wallet className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                     </div>
                     <div>
                       <h2 className="text-xl sm:text-2xl font-bold text-white">Buyout Strategy Analysis</h2>
-                      <p className="text-yellow-200 text-xs sm:text-sm">Precision planning for token control acquisition</p>
+                      <p className="text-white/80 text-xs sm:text-sm">Precision planning for token control acquisition</p>
                     </div>
                   </div>
                 </div>
@@ -401,12 +401,12 @@ export default function CTOToolkitApp() {
                 <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 overflow-y-auto max-h-[70vh]">
                   {/* Status Summary Cards */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <Card className="bg-[#272145] border-0 shadow-md overflow-hidden">
-                      <div className="h-2 bg-gradient-to-r from-yellow-500 to-amber-400"></div>
+                    <Card className="bg-[#1C1F3A] border-0 shadow-md overflow-hidden">
+                      <div className="h-2 bg-gradient-to-r from-[#00C2FF] to-[#02E4B7]"></div>
                       <CardContent className="p-5">
                         <div className="flex items-center gap-2 mb-3">
-                          <div className="bg-yellow-500/20 p-2 rounded-full">
-                            <Wallet className="h-5 w-5 text-yellow-400" />
+                          <div className="bg-[#00C2FF]/20 p-2 rounded-full">
+                            <Wallet className="h-5 w-5 text-[#00C2FF]" />
                           </div>
                           <h3 className="font-semibold text-white">Cost Estimate</h3>
                         </div>
@@ -427,12 +427,12 @@ export default function CTOToolkitApp() {
                       </CardContent>
                     </Card>
                     
-                    <Card className="bg-[#272145] border-0 shadow-md overflow-hidden">
-                      <div className="h-2 bg-gradient-to-r from-yellow-500 to-amber-400"></div>
+                    <Card className="bg-[#1C1F3A] border-0 shadow-md overflow-hidden">
+                      <div className="h-2 bg-gradient-to-r from-[#00C2FF] to-[#02E4B7]"></div>
                       <CardContent className="p-5">
                         <div className="flex items-center gap-2 mb-3">
-                          <div className="bg-yellow-500/20 p-2 rounded-full">
-                            <Users className="h-5 w-5 text-yellow-400" />
+                          <div className="bg-[#00C2FF]/20 p-2 rounded-full">
+                            <Users className="h-5 w-5 text-[#00C2FF]" />
                           </div>
                           <h3 className="font-semibold text-white">Holder Landscape</h3>
                         </div>
@@ -453,12 +453,12 @@ export default function CTOToolkitApp() {
                       </CardContent>
                     </Card>
                     
-                    <Card className="bg-[#272145] border-0 shadow-md overflow-hidden">
-                      <div className="h-2 bg-gradient-to-r from-yellow-500 to-amber-400"></div>
+                    <Card className="bg-[#1C1F3A] border-0 shadow-md overflow-hidden">
+                      <div className="h-2 bg-gradient-to-r from-[#00C2FF] to-[#02E4B7]"></div>
                       <CardContent className="p-5">
                         <div className="flex items-center gap-2 mb-3">
-                          <div className="bg-yellow-500/20 p-2 rounded-full">
-                            <TrendingUp className="h-5 w-5 text-yellow-400" />
+                          <div className="bg-[#00C2FF]/20 p-2 rounded-full">
+                            <TrendingUp className="h-5 w-5 text-[#00C2FF]" />
                           </div>
                           <h3 className="font-semibold text-white">Takeover Metrics</h3>
                         </div>
@@ -615,26 +615,26 @@ export default function CTOToolkitApp() {
           </Dialog>
         </Section>
 
-        <Section icon={Globe} title="Social Takeover Kit" borderColor="border-pink-500">
+        <Section icon={Globe} title="Social Takeover Kit" borderColor="border-[#FA62FF]">
           <p className="text-gray-300 text-sm">
             Deploy meme assets, generate token site, and launch community rooms.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <Button className="bg-pink-500 hover:bg-pink-600 text-black w-full sm:w-auto">Launch Kit</Button>
-            <Button className="bg-teal-500 hover:bg-teal-600 text-white w-full sm:w-auto">Create Telegram Room</Button>
-            <Button className="bg-indigo-500 hover:bg-indigo-600 text-white w-full sm:w-auto">Create Discord Server</Button>
+            <Button className="bg-[#FA62FF] hover:bg-[#E054E3] text-black w-full sm:w-auto">Launch Kit</Button>
+            <Button className="bg-[#02E4B7] hover:bg-[#02C19A] text-black w-full sm:w-auto">Create Telegram Room</Button>
+            <Button className="bg-[#9945FF] hover:bg-[#7C3ADB] text-white w-full sm:w-auto">Create Discord Server</Button>
           </div>
           
           {/* Two-column layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
             {/* Column 1: Telegram Message Templates */}
             <div className="space-y-2">
-              <div className="bg-[#2d294a] border border-pink-400 rounded-lg p-4">
+              <div className="bg-[#1C1F3A] border border-[#FA62FF] rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="bg-pink-500/20 p-2 rounded-full">
-                    <MessageSquare className="h-5 w-5 text-pink-400" />
+                  <div className="bg-[#FA62FF]/20 p-2 rounded-full">
+                    <MessageSquare className="h-5 w-5 text-[#FA62FF]" />
                   </div>
-                  <h3 className="text-md font-semibold text-pink-300">📨 Telegram Message Templates</h3>
+                  <h3 className="text-md font-semibold text-[#FA62FF]">📨 Telegram Message Templates</h3>
                 </div>
                 
                 <p className="text-sm text-gray-300 mb-4">
@@ -656,7 +656,7 @@ export default function CTOToolkitApp() {
                   />
                   
                   <div className="pt-2">
-                    <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
+                    <Button className="w-full bg-gradient-to-r from-[#9945FF] to-[#FA62FF] hover:from-[#7C3ADB] hover:to-[#E054E3] text-white">
                       <MessageSquare className="h-4 w-4 mr-2" />
                       <span>Copy to Clipboard</span>
                     </Button>
@@ -667,12 +667,12 @@ export default function CTOToolkitApp() {
             
             {/* Column 2: MEMEMACHINE */}
             <div className="space-y-2">
-              <div className="bg-[#2d294a] border border-pink-400 rounded-lg p-4">
+              <div className="bg-[#1C1F3A] border border-[#FA62FF] rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="bg-pink-500/20 p-2 rounded-full">
-                    <ImageIcon className="h-5 w-5 text-pink-400" />
+                  <div className="bg-[#FA62FF]/20 p-2 rounded-full">
+                    <ImageIcon className="h-5 w-5 text-[#FA62FF]" />
                   </div>
-                  <h3 className="text-md font-semibold text-pink-300">🎭 MEMEMACHINE</h3>
+                  <h3 className="text-md font-semibold text-[#FA62FF]">🎭 MEMEMACHINE</h3>
                 </div>
                 
                 <p className="text-sm text-gray-300 mb-4">
@@ -704,7 +704,7 @@ export default function CTOToolkitApp() {
                       href="https://imgflip.com/memegenerator" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white p-2 rounded-md w-full hover:from-purple-700 hover:to-pink-700 transition-all"
+                      className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#9945FF] to-[#FA62FF] text-white p-2 rounded-md w-full hover:from-[#7C3ADB] hover:to-[#E054E3] transition-all"
                     >
                       <Sparkles className="h-4 w-4" />
                       <span className="font-medium">Create Memes on Imgflip</span>
@@ -716,29 +716,29 @@ export default function CTOToolkitApp() {
           </div>
         </Section>
 
-        <Section icon={Users} title="Community Treasury" borderColor="border-blue-500">
+        <Section icon={Users} title="Community Treasury" borderColor="border-[#02E4B7]">
           <p className="text-gray-300 text-sm">
             Set up a multisig wallet and launch governance tools.
           </p>
-          <Button className="bg-blue-500 hover:bg-blue-600 text-black w-full">Set Up Treasury</Button>
+          <Button className="bg-[#02E4B7] hover:bg-[#02C19A] text-black w-full">Set Up Treasury</Button>
         </Section>
 
-        <Section icon={TrendingUp} title="Growth & Quests" borderColor="border-green-500">
+        <Section icon={TrendingUp} title="Growth & Quests" borderColor="border-[#14F195]">
           <Dialog>
             <DialogTrigger asChild>
-              <Button className="bg-green-500 hover:bg-green-600 text-black w-full">Open Growth Tools</Button>
+              <Button className="bg-[#14F195] hover:bg-[#10CC7E] text-black w-full">Open Growth Tools</Button>
             </DialogTrigger>
             <ConsistentDialogContent>
               <div className="flex flex-col h-full">
                 {/* Header with gradient background */}
-                <div className="bg-gradient-to-r from-green-700 to-emerald-600 p-4 sm:p-6">
+                <div className="bg-gradient-to-r from-[#14F195] to-[#00C2FF] p-4 sm:p-6">
                   <div className="flex items-center gap-2 sm:gap-4">
                     <div className="bg-white/10 p-2 sm:p-3 rounded-full">
-                      <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-green-200" />
+                      <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                     </div>
                     <div>
                       <h2 className="text-xl sm:text-2xl font-bold text-white">Growth Engine</h2>
-                      <p className="text-green-200 text-xs sm:text-sm">Accelerate your community and token growth</p>
+                      <p className="text-white/80 text-xs sm:text-sm">Accelerate your community and token growth</p>
                     </div>
                   </div>
                 </div>
@@ -1032,13 +1032,13 @@ export default function CTOToolkitApp() {
             </ConsistentDialogContent>
           </Dialog>
         </Section>
-        <Section icon={Globe} title="Landing Page Generator" borderColor="border-orange-500">
+        <Section icon={Globe} title="Landing Page Generator" borderColor="border-[#FC8E00]">
           <p className="text-gray-300 text-sm">
             Instantly generate a beautiful, hosted landing page to showcase your meme token takeover.
           </p>
           <Dialog>
             <DialogTrigger asChild>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-black w-full">Launch Generator</Button>
+              <Button className="bg-[#FC8E00] hover:bg-[#E07D08] text-black w-full">Launch Generator</Button>
             </DialogTrigger>
             <ConsistentDialogContent>
               <div className="flex flex-col h-full">
@@ -1260,13 +1260,14 @@ export default function CTOToolkitApp() {
             </ConsistentDialogContent>
           </Dialog>
         </Section>
-        <Section icon={TrendingUp} title="DEX Booster" borderColor="border-red-500">
+        
+        <Section icon={TrendingUp} title="DEX Booster" borderColor="border-[#F25144]">
           <p className="text-gray-300 text-sm">
             Instantly deploy liquidity, lock LP, and boost visibility on Solana DEXs. Ideal for launch day.
           </p>
           <Dialog>
             <DialogTrigger asChild>
-              <Button className="bg-red-500 hover:bg-red-600 text-black w-full">Launch DEX Booster</Button>
+              <Button className="bg-[#F25144] hover:bg-[#D34239] text-black w-full">Launch DEX Booster</Button>
             </DialogTrigger>
             <ConsistentDialogContent>
               <div className="flex flex-col h-full">
@@ -1567,7 +1568,7 @@ export default function CTOToolkitApp() {
           </Dialog>
         </Section>
 
-        <footer className="text-center text-sm text-gray-500 pt-10">
+        <footer className="text-center text-sm text-[#02E4B7] pt-10">
           🚀 Powered by degens. Made for meme token warriors. Built on Solana.
         </footer>
       </div>

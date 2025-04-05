@@ -349,6 +349,140 @@ export default function Home() {
         </div>
       </div>
       
+      {/* CTO-Lead Credibility System Section */}
+      <div className="py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">CTO-Lead Credibility System</h2>
+          <p className="text-gray-300 text-center max-w-2xl mx-auto mb-10">
+            Our transparent scoring system helps identify trusted community leaders and increases visibility for the most reliable takeover operations.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="bg-[#1C1F3A]/60 backdrop-blur-sm rounded-xl p-6 border-l-4 border-[#9945FF]">
+              <h3 className="text-xl font-bold mb-4 flex items-center">
+                <span className="w-10 h-10 rounded-full bg-[#9945FF]/20 flex items-center justify-center mr-3">
+                  <TrendingUp className="h-5 w-5 text-[#9945FF]" />
+                </span>
+                Trust Metrics
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <div className="h-6 w-6 rounded-full bg-[#9945FF]/10 flex items-center justify-center mr-3 mt-0.5">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#9945FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="font-medium text-white">Successful Takeovers</span>
+                    <p className="text-sm text-gray-300">Points awarded for each completed CTO with positive community feedback</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="h-6 w-6 rounded-full bg-[#9945FF]/10 flex items-center justify-center mr-3 mt-0.5">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#9945FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="font-medium text-white">Governance Setup</span>
+                    <p className="text-sm text-gray-300">Higher scores for implementing voting systems and multisig wallets</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="h-6 w-6 rounded-full bg-[#9945FF]/10 flex items-center justify-center mr-3 mt-0.5">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#9945FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="font-medium text-white">Community Rating</span>
+                    <p className="text-sm text-gray-300">Peer reviews and community feedback directly impact leader scores</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-[#1C1F3A]/60 backdrop-blur-sm rounded-xl p-6 border-l-4 border-[#14F195]">
+              <h3 className="text-xl font-bold mb-4 flex items-center">
+                <span className="w-10 h-10 rounded-full bg-[#14F195]/20 flex items-center justify-center mr-3">
+                  <Users className="h-5 w-5 text-[#14F195]" />
+                </span>
+                Verification Options
+              </h3>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="h-16 w-16 flex-shrink-0 rounded-xl bg-[#14F195]/10 flex items-center justify-center mr-4">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#14F195" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="font-medium text-white text-lg">Optional KYC</span>
+                    <p className="text-sm text-gray-300">Leaders can choose to verify their identity through our secure KYC process while maintaining privacy. Verified accounts receive a special badge and higher visibility.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="h-16 w-16 flex-shrink-0 rounded-xl bg-[#14F195]/10 flex items-center justify-center mr-4">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 12L12 14L17 12M12 2V4M12 4V14M12 4C12 4 16 5 18 8M12 4C12 4 8 5 6 8M7 21H17C18.1046 21 19 20.1046 19 19V5C19 3.89543 18.1046 3 17 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21Z" stroke="#14F195" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="font-medium text-white text-lg">NFT Credibility Badge</span>
+                    <p className="text-sm text-gray-300">Earn unique NFT badges for successful takeovers and community milestones. Each badge contains on-chain verification of achievements and increases trust score.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-10 flex justify-center">
+            <Card className="bg-gradient-to-br from-[#272145] to-[#1C1F3A] border-0 shadow-xl max-w-lg w-full">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-bold">Leading CTO Score</h3>
+                  <div className="bg-[#9945FF]/20 text-[#9945FF] text-sm font-medium px-3 py-1 rounded-full">
+                    Top 1%
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-300">KingRibbit</span>
+                    <div className="flex items-center space-x-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <span key={star} className="text-yellow-400">★</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="w-full bg-[#0A0F25] h-3 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-[#9945FF] to-[#14F195] w-[92%]"></div>
+                  </div>
+                  <div className="flex justify-between text-xs text-gray-400">
+                    <span>92/100 Trust Score</span>
+                    <span>4 Successful CTOs</span>
+                  </div>
+                  <div className="flex items-center mt-2">
+                    <span className="inline-flex items-center bg-[#14F195]/10 text-[#14F195] text-xs px-2 py-1 rounded-full mr-2">
+                      <svg className="h-3 w-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      KYC Verified
+                    </span>
+                    <span className="inline-flex items-center bg-[#9945FF]/10 text-[#9945FF] text-xs px-2 py-1 rounded-full">
+                      <svg className="h-3 w-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 12L12 14L17 12M12 4V14M7 21H17C18.1046 21 19 20.1046 19 19V5C19 3.89543 18.1046 3 17 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      3 NFT Badges
+                    </span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+      
       {/* CTA Section */}
       <div className="max-w-4xl mx-auto px-4 py-20">
         <div className="bg-gradient-to-r from-[#9945FF]/20 to-[#14F195]/20 rounded-3xl p-10 text-center">

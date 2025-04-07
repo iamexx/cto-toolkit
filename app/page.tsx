@@ -1,7 +1,10 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sparkles, Rocket, Users, TrendingUp, ExternalLink, Flame, ArrowUp, Clock, BarChart4, MessageSquare } from "lucide-react";
+import { Sparkles, Rocket, Users, TrendingUp, ExternalLink, Flame, ArrowUp, Clock, BarChart4, MessageSquare, Search, Wallet } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 interface CTOCardProps {
   name: string;
@@ -129,19 +132,19 @@ const CTOCard = ({
           <div className="flex ml-auto gap-2">
             <a 
               href={telegramLink} 
-              target="_blank"
-              rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-[#229ED9]/10 text-[#229ED9] border border-[#229ED9]/30 rounded-md px-2 py-1 text-xs hover:bg-[#229ED9]/20"
             >
               <svg className="h-3 w-3 mr-1" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.8 8.1c-.2 1.8-.9 6.3-1.3 8.3-.2.8-.5 1.1-.8 1.1-.7.1-1.2-.5-1.9-1-1-.7-1.6-1.2-2.6-1.9-1.1-.8-.4-1.2.2-1.9.2-.2 3.1-2.8 3.2-3.1 0 0 0-.2-.2-.2s-.5.1-.7.1c-.3.1-1.7 1.1-2.5 1.7-1.1.8-1.9.8-2.3.8-1.7 0-3.2-1.1-3.2-1.1.8-.3 1.7-.6 2.5-1 1.7-.7 3.4-1.5 4.3-1.9.7-.1 3.5-1.1 3.5-1.1s.9-.3.9.4v.7z" />
               </svg>
               Telegram
-            </a>
-            <a 
+          </a>
+          <a
               href={twitterLink} 
-              target="_blank"
-              rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-[#1DA1F2]/10 text-[#1DA1F2] border border-[#1DA1F2]/30 rounded-md px-2 py-1 text-xs hover:bg-[#1DA1F2]/20"
             >
               <svg className="h-3 w-3 mr-1" viewBox="0 0 24 24" fill="currentColor">
@@ -157,6 +160,22 @@ const CTOCard = ({
 };
 
 export default function Home() {
+  const [tokenAddress, setTokenAddress] = useState("");
+  const [isWalletConnected, setIsWalletConnected] = useState(false);
+  
+  const handleTakeover = () => {
+    if (tokenAddress.trim()) {
+      // Redirect to toolkit with token address parameter
+      window.location.href = `/cto-tools?token=${tokenAddress.trim()}`;
+    }
+  };
+  
+  const handleConnectWallet = () => {
+    // This would normally connect to a Solana wallet
+    // For now, just simulate connection
+    setIsWalletConnected(true);
+  };
+  
   const featuredCTOs = [
     {
       name: "Frog Empire",
@@ -251,6 +270,34 @@ export default function Home() {
           <p className="text-gray-300 text-center max-w-2xl mx-auto mb-10">
             Discover, track and participate in the most promising Community Takeover Operations (CTOs) in the Solana ecosystem. From rugs to riches - community power unleashed.
           </p>
+          
+          {/* Token Address Input and Takeover Button */}
+          <div className="max-w-2xl mx-auto mb-16">
+            <div className="flex flex-col md:flex-row gap-3">
+              <div className="relative flex-1">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Search className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Enter token address to takeover..."
+                  className="w-full pl-10 pr-4 py-3 bg-[#1C1F3A]/80 backdrop-blur-sm border-2 border-[#9945FF]/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9945FF] focus:border-transparent"
+                  value={tokenAddress}
+                  onChange={(e) => setTokenAddress(e.target.value)}
+                />
+              </div>
+              <Button 
+                className="bg-[#9945FF] hover:bg-[#7C3ADB] text-white px-6 py-3 text-lg font-medium relative"
+                onClick={handleTakeover}
+                disabled={!tokenAddress.trim()}
+              >
+                <Sparkles className="h-5 w-5 mr-2" /> Takeover Token
+              </Button>
+            </div>
+            <p className="text-xs text-gray-400 mt-2 text-center">
+              Enter a Solana token address to analyze and takeover
+            </p>
+          </div>
           
           <div className="flex justify-center mb-16">
             <Button className="bg-[#9945FF] hover:bg-[#7C3ADB] text-white px-6 py-6 text-lg font-medium relative animate-pulse">
@@ -492,18 +539,29 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/cto-tools" className="inline-flex items-center justify-center bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-[#7C3ADB] hover:to-[#10CC7E] text-white px-6 py-6 text-lg font-medium rounded-md">
-              <Sparkles className="h-5 w-5 mr-2" /> Access CTO Toolkit
-            </Link>
-            <a 
-              href="https://t.me/cto_biach" 
-          target="_blank"
-          rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-[#1C1F3A]/80 border border-[#14F195] text-[#14F195] px-6 py-6 text-lg font-medium rounded-md hover:bg-[#14F195]/10"
-            >
-              Join Telegram Community
-              <ExternalLink className="h-4 w-4 ml-2" />
-            </a>
+            {isWalletConnected ? (
+              <>
+                <Link href="/cto-tools" className="inline-flex items-center justify-center bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-[#7C3ADB] hover:to-[#10CC7E] text-white px-6 py-6 text-lg font-medium rounded-md">
+                  <Sparkles className="h-5 w-5 mr-2" /> Access CTO Toolkit
+                </Link>
+                <a 
+                  href="https://t.me/cto_biach" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-[#1C1F3A]/80 border border-[#14F195] text-[#14F195] px-6 py-6 text-lg font-medium rounded-md hover:bg-[#14F195]/10"
+                >
+                  Join Telegram Community
+                  <ExternalLink className="h-4 w-4 ml-2" />
+                </a>
+              </>
+            ) : (
+              <Button 
+                className="bg-[#9945FF] hover:bg-[#7C3ADB] text-white px-6 py-6 text-lg font-medium rounded-md"
+                onClick={handleConnectWallet}
+              >
+                <Wallet className="h-5 w-5 mr-2" /> Connect Wallet to Continue
+              </Button>
+            )}
           </div>
         </div>
       </div>

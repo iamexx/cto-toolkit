@@ -243,7 +243,11 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#0A0F25] via-[#14226F] to-[#0E1B52] text-white">
       {/* Toolkit Button in Top Right */}
-      <div className="fixed top-4 right-4 z-50">
+      <div className="fixed top-4 right-4 z-50 flex gap-2">
+        <Link href="/wallet-test" className="flex items-center justify-center bg-[#1C1F3A]/80 backdrop-blur-sm border-2 border-[#14F195] text-[#14F195] hover:bg-[#14F195]/10 px-4 py-2 rounded-lg shadow-lg">
+          <Wallet className="h-5 w-5 mr-2" />
+          <span className="font-medium">Test Wallet</span>
+        </Link>
         <Link href="/cto-tools" className="flex items-center justify-center bg-[#1C1F3A]/80 backdrop-blur-sm border-2 border-[#02E4B7] text-[#02E4B7] hover:bg-[#02E4B7]/10 px-4 py-2 rounded-lg shadow-lg">
           <Users className="h-5 w-5 mr-2" />
           <span className="font-medium">Open Toolkit</span>
